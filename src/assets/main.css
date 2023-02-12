@@ -1,0 +1,46 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  height: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 6rem;
+  padding-right: 7rem;
+  font-weight: normal;
+}
+
+.highlightme { background-color:rgb(254, 215, 164); }
+
+a:hover,
+.orange {
+  text-decoration: none;
+  color: rgb(254, 159, 5) !important;
+  transition: 0.4s;
+}
+
+a,
+.orange {
+  text-decoration: none;
+  color:#181818!important;
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    /* background-color: rgb(254, 215, 164); */
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: top;
+  }
+
+  #app {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* padding: 0 2rem; */
+  }
+}
