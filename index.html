@@ -1,12 +1,1235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astrid van den Brandt</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astrid van den Brandt</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@1,2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="typography.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #f7f6f4;
+      --ink:    #000000;
+      --muted:  #000000;
+      --dim:    #000000;
+      --accent: #9BBF30;
+      --rule:   #000000;
+      --side:   320px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Switzer Variable', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ══════════════════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════════════════ */
+    .sidebar {
+      width: var(--side);
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 20px 32px;
+    }
+
+    .sb-name {
+      font-family: 'Switzer Variable', Helvetica, Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .sb-role {
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .sb-rule { border: none; border-top: 2px solid var(--rule); margin: 20px 0 22px; }
+
+    nav { display: flex; flex-direction: column; }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 400;
+      font-family: 'Courier New', Courier, monospace;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 7px 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    nav a .arr { opacity: 0; transition: opacity 0.15s; color: var(--accent); display: flex; align-items: center; transform: none; }
+    nav a.active { color: var(--ink); font-weight: 600; }
+    nav a.active .arr { opacity: 1; }
+    nav a:hover { color: var(--ink); }
+
+    .sb-latest {
+      margin-top: 28px;
+      background: rgba(0,0,0,0.04);
+      padding: 10px 12px;
+    }
+    .sb-latest-label {
+      font-size: 9px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .sb-latest-date {
+      font-size: 11px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .sb-latest-text {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .sb-latest-link { color: var(--muted); text-decoration: none; }
+    .sb-latest-link:hover { color: var(--ink); }
+
+    .sb-footer {
+      margin-top: auto;
+      border-top: 2px solid var(--rule);
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .sb-footer a, .sb-footer span {
+      font-size: 11px;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .sb-footer a:hover { color: var(--ink); }
+
+    /* ══════════════════════════════════════════════
+       MAIN
+    ══════════════════════════════════════════════ */
+    main { flex: 1; min-width: 0; }
+
+    .section {
+      padding: 64px 6vw 72px 5vw;
+      border-top: 1px solid var(--rule);
+      position: relative;
+    }
+    .section:first-child { border-top: none; }
+    #work { border-top: none; }
+
+    /* section tag + heading */
+    .sec-tag { display: none; }
+
+    .sec-h {
+      font-family: 'Switzer Variable', Helvetica, Arial, sans-serif;
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 32px;
+    }
+
+    /* rule that sits below every section heading */
+    .sec-rule { display: none; }
+
+    /* ── HELLO ──────────────────────────────────── */
+    #hello {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hello-illus-wrap {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateX(67%);
+      mix-blend-mode: multiply;
+      opacity: 0.85;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .hello-illustration {
+      display: block;
+      height: 110vh;
+      width: auto;
+      transform: none;
+    }
+
+    .hello-inner {
+      padding: clamp(20px, 4vh, 56px) 6vw clamp(20px, 4vh, 56px) 5vw;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* desktop: constrain text to left, image anchored to top */
+    @media (min-width: 1024px) {
+      .hello-inner { max-width: 72%; }
+      .hello-illus-wrap { transform: translateX(67%); bottom: auto; top: 0; }
+    }
+
+    /* phone: hide image */
+    @media (max-width: 767px) {
+      .hello-illus-wrap { display: none; }
+    }
+
+    .hello-name {
+      font-family: 'Switzer Variable', Helvetica, Arial, sans-serif;
+      font-size: clamp(22px, min(2.8vw, 5vh), 44px);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .hello-role {
+      font-size: clamp(12px, 1.1vw, 15px);
+      color: var(--muted);
+      margin-bottom: clamp(10px, 2vh, 24px);
+      letter-spacing: 0.3px;
+    }
+
+    .hello-rule {
+      border: none;
+      border-top: 2px solid var(--rule);
+      margin-bottom: clamp(10px, 2vh, 22px);
+      width: 60px;
+    }
+
+    .hello-bio {
+      font-size: clamp(13px, min(1.2vw, 1.8vh), 16px);
+      font-weight: 400;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .hello-bio a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .hello-bio a:hover { color: var(--ink); }
+    .hello-bio-intro { font-size: clamp(26px, min(3.5vw, 6vh), 54px) !important; font-weight: 500; letter-spacing: -0.3px; line-height: 1.3; max-width: 760px; }
+    .hello-bio-section { margin-top: clamp(8px, 1.5vh, 14px); max-width: 620px; }
+    .hello-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: clamp(60px, 12vh, 120px); max-width: 620px; }
+    .hello-scroll { text-decoration: none; color: var(--ink); transition: transform 0.15s; }
+    .hello-scroll:hover { transform: translateY(3px); }
+    .hello-bio-label {
+      font-size: 13px;
+      color: var(--accent);
+      font-family: 'Courier New', Courier, monospace;
+      margin-bottom: 4px;
+    }
+
+    /* ── WORK (list + hover tooltip) ───────────── */
+    .proj-rows { display: flex; flex-direction: column; }
+    .proj-rows-end { border-top: 1px solid var(--rule); }
+    .proj-legend { font-size: 10px; color: var(--muted); margin-top: 12px; text-align: right; }
+
+    .proj-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      height: 64px;
+      border-top: 1px solid var(--rule);
+      position: relative;
+      cursor: pointer;
+      transition: height 0.3s ease, padding 0.3s ease;
+      overflow: hidden;
+    }
+    /* accordion: non-active rows shrink */
+    .proj-rows.has-open .proj-row:not(.active) { height: 26px; }
+    .proj-rows.no-transition .proj-row { transition: none !important; }
+
+    /* accordion: active row uses a 2-row grid — header bar stays identical */
+    .proj-rows.has-open .proj-row.active {
+      display: grid;
+      grid-template-columns: auto auto 1fr auto auto;
+      grid-template-rows: 64px 1fr;
+      column-gap: 18px;
+      height: 620px;
+      align-items: center;
+    }
+    .proj-rows.has-open .proj-row:not(.active) .proj-tags { display: none; }
+    .proj-rows.has-open .proj-row.active .proj-expanded {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      align-self: start;
+    }
+
+    /* expanded content */
+    .proj-expanded { display: none; }
+
+    .proj-exp-left {
+      display: flex; flex-direction: column; gap: 14px; min-width: 0;
+      padding: 12px 0 12px 32px;
+      justify-content: flex-end;
+    }
+    .proj-exp-right {
+      min-width: 0;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .proj-exp-top {
+      display: flex; gap: 18px; align-items: flex-start;
+    }
+    .proj-exp-side {
+      display: flex; flex-direction: column; gap: 12px; min-width: 0; flex: 1;
+    }
+    .proj-exp-demos {
+      display: flex; width: 100%; max-width: 800px;
+    }
+    .proj-exp-demos.two {
+      align-items: flex-start;
+      padding-bottom: 32px;
+    }
+    .proj-exp-demos.two .proj-exp-demo {
+      max-width: none; flex-shrink: 0; aspect-ratio: unset;
+    }
+    .proj-exp-demos.two .proj-exp-demo:first-child {
+      width: 46%; position: relative; z-index: 1;
+    }
+    .proj-exp-demos.two .proj-exp-demo:last-child {
+      width: 58%;
+      margin-left: -80px;
+      margin-top: 100px;
+      z-index: 2;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    }
+    .proj-exp-demo {
+      aspect-ratio: 16/9;
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: color-mix(in srgb, var(--accent) 10%, #e2ddd5);
+      overflow: hidden;
+    }
+    .proj-exp-demo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .proj-exp-demo img.contain { object-fit: contain; }
+    .proj-exp-demo.contain { background: transparent; aspect-ratio: unset; }
+    .proj-exp-demo.contain img.contain { height: auto; object-fit: initial; }
+
+    .proj-exp-group { display: flex; flex-direction: column; gap: 4px; padding: 12px 16px; }
+    .proj-exp-label {
+      font-size: 13px;
+      letter-spacing: 0.8px; color: var(--dim);
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 700;
+    }
+    .proj-exp-abstract {
+      font-size: 14px; line-height: 1.6; color: var(--muted);
+      padding: 12px 16px;
+    }
+    .proj-exp-pub {
+      display: block; font-size: 13px;
+      color: var(--ink); text-decoration: none;
+    }
+    .proj-exp-pub:hover { color: var(--accent); }
+    .proj-exp-pill {
+      display: block; font-size: 13px; color: var(--ink);
+      text-decoration: none;
+    }
+    .proj-exp-pill:hover { color: var(--accent); }
+    .proj-exp-links { display: flex; gap: 6px; flex-wrap: wrap; }
+    .proj-exp-venue {
+      font-size: 11px; color: var(--dim);
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .proj-num {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dim);
+      min-width: 26px;
+      flex-shrink: 0;
+    }
+
+    .proj-dot {
+      width: 9px;
+      height: 9px;
+      flex-shrink: 0;
+      transform: rotate(45deg);
+      margin: 0 4px;
+    }
+
+    .proj-name {
+      font-size: clamp(15px, 1.6vw, 19px);
+      font-weight: 500;
+      color: var(--ink);
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .proj-name em { color: var(--dim); font-style: normal; margin: 0 4px; }
+    .proj-period {
+      font-size: 11px;
+      color: var(--dim);
+      font-family: 'Courier New', Courier, monospace;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+
+    .proj-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      width: 380px;
+      align-content: center;
+      justify-content: flex-end;
+    }
+
+    .ptag {
+      display: inline-flex;
+      align-items: center;
+      height: 23px;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1;
+      color: var(--muted);
+      border: 1.5px solid var(--rule);
+      border-radius: 20px;
+      padding: 0 11px;
+    }
+
+    .hello-contact {
+      display: inline-block;
+      color: var(--dim);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-size: clamp(16px, 1.8vw, 24px);
+      transition: color 0.15s;
+    }
+    .hello-contact:hover { color: var(--ink); }
+
+    /* floating cursor tooltip */
+    .proj-tip {
+      position: fixed;
+      pointer-events: none;
+      z-index: 500;
+      width: 380px;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .proj-tip.show {
+      opacity: 1;
+    }
+
+    .proj-tip {
+      aspect-ratio: 16 / 10;
+      background-color: transparent;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+    /* heatmap grid when no real image */
+    .proj-tip:not([style*="url"]) {
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+      grid-template-rows: repeat(16, 1fr);
+    }
+
+    /* ── EXPERIENCE ─────────────────────────────── */
+    .entry-list { display: flex; flex-direction: column; }
+
+    /* full-width header row, sits on the top rule */
+    .entry-head {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 16px 0 14px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .e-when  { font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+    .e-role  { font-size: 15px; font-weight: 600; color: var(--ink); }
+    .e-org   { font-size: 13.5px; color: var(--muted); }
+    .e-where { margin-left: auto; font-size: 11px; color: var(--dim); white-space: nowrap; }
+
+    .entry-body {
+      padding: 0 0 32px;
+      padding-left: 0;
+    }
+
+    .e-dept {
+      font-size: 11.5px;
+      color: var(--dim);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .e-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .e-bullets li {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .e-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 6px;
+      width: 5px; height: 5px;
+      border-radius: 1px;
+      background: var(--accent);
+    }
+
+    /* closing rule after last entry */
+    .entry-list-end { border-top: 1px solid var(--rule); }
+
+    /* ── EDUCATION ──────────────────────────────── */
+    .edu-list { display: flex; flex-direction: column; }
+
+    .edu-item {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 16px 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .edu-year  { font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; min-width: 80px; }
+    .edu-deg   { font-size: 15px; font-weight: 600; color: var(--ink); }
+    .edu-inst  { font-size: 13px; color: var(--muted); }
+    .edu-list-end { border-top: 1px solid var(--rule); }
+
+    /* ── SKILLS ─────────────────────────────────── */
+    .skill-rows { display: flex; flex-direction: column; }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 20px;
+      padding: 14px 0;
+      border-top: 1px solid var(--rule);
+      align-items: baseline;
+    }
+
+    .sk-cat {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--accent);
+    }
+    .sk-val { font-size: 14px; color: var(--ink); line-height: 1.6; }
+    .skill-rows-end { border-top: 1px solid var(--rule); }
+
+    /* ── PUBLICATIONS ───────────────────────────── */
+    .pub-list { display: flex; flex-direction: column; max-width: 800px; }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    .pub-item .pub-year { visibility: visible; }
+    .pub-item.pub-cont  .pub-year { visibility: hidden; }
+
+    .pub-year  { font-size: 12px; font-weight: 600; color: var(--accent); padding-top: 3px; font-family: 'Courier New', Courier, monospace; }
+    .pub-title { font-size: 14.5px; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 5px; }
+    .pub-doi { font-size: 11px; color: var(--muted); text-decoration: none; margin-top: 3px; display: inline-block; }
+    .pub-doi:hover { color: var(--accent); }
+    .pub-auth  { font-size: 12.5px; color: var(--muted); margin-bottom: 3px; line-height: 1.4; }
+    .pub-auth u { text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+    .pub-venue { font-size: 11.5px; color: var(--dim); font-style: italic; }
+    .pub-list-end { border-top: 1px solid var(--rule); }
+
+    .badge {
+      display: inline-block;
+      font-style: normal;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      background: color-mix(in srgb, var(--accent) 20%, transparent);
+      border: 1px solid var(--accent);
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+      letter-spacing: 0.3px;
+      vertical-align: middle;
+      line-height: 1.8;
+    }
+
+    /* ── AWARDS & TALKS ─────────────────────────── */
+    .honors-talks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 56px;
+    }
+
+    .block-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--muted);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .line-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      align-items: start;
+      gap: 14px;
+      padding: 12px 0;
+    }
+
+    .li-year { font-size: 12px; font-weight: 600; color: var(--accent); padding-top: 3px; font-family: 'Courier New', Courier, monospace; }
+    .line-item.li-cont .li-year { visibility: hidden; }
+    .li-text { font-size: 13px; color: var(--ink); line-height: 1.45; }
+    .li-text a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+    .li-text a:hover { color: var(--accent); }
+    .talk-title { display: block; font-size: 13px; color: var(--ink); line-height: 1.45; text-decoration: none; }
+    a.talk-title:hover { color: var(--accent); }
+    .talk-meta { font-size: 11.5px; color: var(--dim); margin-top: 2px; font-style: italic; }
+    .talk-meta a { color: var(--dim); font-style: normal; text-decoration: underline; text-underline-offset: 2px; }
+    .talk-meta a:hover { color: var(--ink); }
+    .news-link {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid currentColor;
+      border-radius: 20px;
+      padding: 1px 7px;
+      white-space: nowrap;
+      vertical-align: middle;
+      transition: color 0.15s, background 0.15s, border-color 0.15s;
+    }
+    .news-link:hover { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+    #news .line-item { grid-template-columns: 90px 1fr; }
+    #news .li-year { color: var(--accent); white-space: nowrap; font-size: 12px; font-weight: 600; }
+    #talks .reveal, #awards .reveal, #news .reveal { max-width: 800px; }
+
+    /* ── ABOUT ─────────────────────────────────── */
+    .about-wrap { display: flex; gap: 48px; align-items: flex-start; }
+    .about-body { max-width: 620px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+    .about-intro { font-size: clamp(15px, 1.4vw, 18px); font-weight: 500; color: var(--ink); line-height: 1.55; }
+    .about-label { font-size: 11px; font-family: 'Courier New', Courier, monospace; color: var(--accent); margin-bottom: -8px; }
+    .about-para { font-size: clamp(13px, 1.2vw, 15px); color: var(--muted); line-height: 1.7; }
+    .about-para a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .about-para a:hover { color: var(--ink); }
+    .about-photo { width: 220px; flex-shrink: 0; filter: grayscale(100%); display: block; }
+    @media (max-width: 900px) {
+      .proj-rows.has-open .proj-row.active {
+        height: auto;
+        grid-template-rows: 64px auto;
+        overflow: visible;
+      }
+      .proj-rows.has-open .proj-row.active .proj-expanded { grid-template-columns: 1fr; }
+      .proj-exp-left { padding: 12px 16px; }
+      .proj-exp-demos { max-width: 400px; }
+      .proj-exp-demo { max-width: 400px; }
+    }
+
+    @media (max-width: 767px) {
+      /* sidebar → compact sticky top bar */
+      body { flex-direction: column; }
+      .sidebar {
+        width: 100%; height: auto;
+        position: sticky; top: 0; z-index: 200;
+        background: var(--bg);
+        flex-direction: row; align-items: center;
+        padding: 12px 5vw;
+        border-bottom: 1px solid var(--rule);
+      }
+      .sb-name { font-size: 17px; margin-bottom: 0; }
+      .sb-role, .sb-rule, nav, .sb-latest, .sb-footer { display: none; }
+
+      /* sections */
+      .section { padding: 36px 5vw 44px; }
+      #hello { min-height: 60vh; }
+
+      /* project row header: hide tags + period, simplify grid */
+      .proj-tags { display: none; }
+      .proj-period { display: none; }
+      .proj-rows.has-open .proj-row.active {
+        grid-template-columns: auto auto 1fr;
+      }
+
+      /* accordion demo smaller on phone */
+      .proj-exp-demos { max-width: 280px; }
+      .proj-exp-demo { max-width: 280px; }
+
+      /* tooltip: not useful on touch */
+      .proj-tip { display: none; }
+
+      /* two-col honors/talks → single col */
+      .honors-talks { grid-template-columns: 1fr; }
+
+      /* skills: stack label above value */
+      .skill-row { grid-template-columns: 1fr; gap: 4px; }
+
+      /* about */
+      .about-wrap { flex-direction: column; }
+      .about-photo { width: 100%; max-width: 280px; }
+    }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    .site-footer {
+      padding: 32px 5vw;
+      font-size: 12px;
+      font-family: 'Courier New', Courier, monospace;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ── CV BUTTON ──────────────────────────────── */
+
+    /* ── REVEAL ─────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar"></aside>
+  <main id="main"></main>
+
+  <script>
+    /* ── helpers ── */
+    const h = s => String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
+    function boldify(authors, bold) {
+      const ea = h(authors), eb = h(bold);
+      return bold ? ea.replace(eb, '<u>' + eb + '</u>') : ea;
+    }
+
+    /* ── section renderers ── */
+    function renderSidebar(d) {
+      const p = d.personal;
+      return `
+        <div class="sb-name">${h(p.firstName)} ${h(p.lastName)}</div>
+        <div class="sb-role">${p.role.map(h).join(' · ')}</div>
+        <hr class="sb-rule">
+        <nav id="sb-nav">
+          ${d.nav.map((n, i) => `<a href="${h(n.href)}"${i === 0 ? ' class="active"' : ''}>${h(n.label)} <span class="arr"><svg width="20" height="20" viewBox="0 0 10 10" fill="currentColor"><rect x="4" y="0" width="2" height="2"/><rect x="2" y="2" width="2" height="2"/><rect x="0" y="4" width="2" height="2"/><rect x="2" y="4" width="2" height="2"/><rect x="4" y="4" width="2" height="2"/><rect x="6" y="4" width="2" height="2"/><rect x="8" y="4" width="2" height="2"/><rect x="2" y="6" width="2" height="2"/><rect x="4" y="8" width="2" height="2"/></svg></span></a>`).join('\n          ')}
+        </nav>
+        ${(() => {
+          const latest = d.news && d.news.items && d.news.items[0];
+          if (!latest) return '';
+          const snippet = latest.text.match(/^.*?[.!?]/)?.[0] ?? latest.text;
+          return `<div class="sb-latest">
+            <div class="sb-latest-label">Latest</div>
+            <div class="sb-latest-date">${h(latest.date)}</div>
+            <div class="sb-latest-text">${h(snippet)}${latest.linkUrl ? ` <a href="${h(latest.linkUrl)}" target="_blank" rel="noopener" class="sb-latest-link">↗</a>` : ''}</div>
+          </div>`;
+        })()}
+        <div class="sb-footer">
+          <a href="mailto:${h(p.email)}">Email</a>
+          <a href="${h(p.linkedinUrl)}" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="${h(p.cvPdf)}" target="_blank" rel="noopener">CV ↗</a>
+          <a href="${h(p.scholarUrl)}" target="_blank" rel="noopener">Scholar ↗</a>
+        </div>`;
+    }
+
+    function renderHello(d) {
+      const p = d.personal;
+      return `
+        <section class="section" id="hello">
+          <div class="hello-illus-wrap">
+            <img class="hello-illustration" src="img/halftone.png" alt="">
+          </div>
+          <div class="hello-inner">
+            <p class="hello-bio hello-bio-intro">Hey, I am ${h(p.firstName)} ${h(p.lastName)}. ${h(p.bioIntro)}</p>
+            <div class="hello-bottom">
+              <a href="mailto:${h(p.email)}" class="hello-contact">get in touch</a>
+              <a href="#work" class="hello-scroll" aria-label="Scroll to projects">
+                <svg width="20" height="20" viewBox="0 0 10 10" fill="currentColor" style="display:block">
+                  <g transform="rotate(-90, 5, 5)">
+                    <rect x="4" y="0" width="2" height="2"/>
+                    <rect x="2" y="2" width="2" height="2"/>
+                    <rect x="0" y="4" width="2" height="2"/>
+                    <rect x="2" y="4" width="2" height="2"/>
+                    <rect x="4" y="4" width="2" height="2"/>
+                    <rect x="6" y="4" width="2" height="2"/>
+                    <rect x="8" y="4" width="2" height="2"/>
+                    <rect x="2" y="6" width="2" height="2"/>
+                    <rect x="4" y="8" width="2" height="2"/>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>`;
+    }
+
+    function renderAbout(d) {
+      const p = d.personal;
+      return `
+        <section class="section" id="about">
+          <h2 class="sec-h">About</h2>
+          <div class="about-wrap">
+            ${p.photo ? `<img class="about-photo" src="${h(p.photo)}" alt="${h(p.firstName)} ${h(p.lastName)}">` : ''}
+            <div class="about-body">
+              <p class="about-intro">${h(p.bioIntro)}</p>
+              <div class="about-label">What I like</div>
+              <p class="about-para">${h(p.bioLove)}</p>
+              <div class="about-label">Who I am</div>
+              <p class="about-para">${h(p.bioWho).replace('HIDIVE lab', `<a href="${h(p.hidiveUrl)}" target="_blank" rel="noopener">HIDIVE lab</a>`)}</p>
+            </div>
+          </div>
+        </section>`;
+    }
+
+    function pubId(pub, i) {
+      return pub.doi ? 'doi-' + pub.doi.replace(/[^a-zA-Z0-9]/g, '-') : 'pub-' + i;
+    }
+
+    function renderWork(w, pubs) {
+      const pubItems = (pubs && pubs.items) ? pubs.items : [];
+      const items = w.items.map(item => {
+        const relPubs = (item.relatedPubs || []).map(idx => pubItems[idx]).filter(Boolean);
+        const pubLinks = relPubs.length ? `
+          <div class="proj-exp-group">
+            <div class="proj-exp-label">Publications</div>
+            ${relPubs.map((pub) => {
+              const href = pub.doi ? 'https://doi.org/' + pub.doi : '#publications';
+              const target = pub.doi ? ' target="_blank" rel="noopener"' : '';
+              const bullet = relPubs.length > 1 ? '• ' : '';
+              return `<a href="${href}"${target} class="proj-exp-pub">${bullet}${h(pub.title)} ↗</a>`;
+            }).join('')}
+          </div>` : '';
+        const linkItems = [
+          item.code    ? { label: 'Code',    href: item.code }    : null,
+          item.website ? { label: 'Website', href: item.website } : null,
+        ].filter(Boolean);
+        const links = linkItems.length ? `
+          <div class="proj-exp-group">
+            <div class="proj-exp-label">Software / Code &amp; Websites</div>
+            ${linkItems.map(l => `<a href="${h(l.href)}" target="_blank" rel="noopener" class="proj-exp-pill">${linkItems.length > 1 ? '• ' : ''}${l.label} ↗</a>`).join('')}
+          </div>` : '';
+        return `
+        <div class="proj-row" data-proj-id="${h(item.id)}">
+          <span class="proj-num">${h(item.num)}</span>
+          <span class="proj-dot" style="background:${h(item.color)}"></span>
+          <span class="proj-name">${h(item.name)} <em>—</em> ${h(item.subtitle)}</span>
+          ${item.period ? `<span class="proj-period">${h(item.period)}</span>` : ''}
+          <div class="proj-tags">
+            ${item.tags.map(t => `<span class="ptag">${h(t)}</span>`).join('')}
+          </div>
+          <div class="proj-expanded">
+            <div class="proj-exp-left">
+              ${(item.demo || item.image) ? `<div class="proj-exp-demos${item.demo2 ? ' two' : ''}">
+                <div class="proj-exp-demo${!(item.demo||'').endsWith('.gif') ? ' contain' : ''}"><img src="${h(item.demo || item.image)}" alt="Demo"${!(item.demo||'').endsWith('.gif') ? ' class="contain"' : ''}></div>
+                ${item.demo2 ? `<div class="proj-exp-demo contain"><img src="${h(item.demo2)}" alt="" class="contain"></div>` : ''}
+              </div>` : ''}
+            </div>
+            <div class="proj-exp-right">
+${item.abstract ? item.abstract.split('\n\n').map(p => `<p class="proj-exp-abstract">${h(p)}</p>`).join('') : ''}
+              ${pubLinks}
+              ${links}
+            </div>
+          </div>
+          <div class="proj-tip" id="tip-${h(item.id)}" style="background-image:url('${h(item.image)}');background-size:${item.imageFit||'cover'};background-color:${item.imageFit==='contain'?'#fff':'transparent'}" data-seed="${item.seed}"></div>
+        </div>`;
+      }).join('');
+      return `
+        <section class="section" id="work">
+          <span class="sec-tag reveal">${h(w.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">${h(w.title)}</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="proj-rows reveal" style="transition-delay:.12s">
+            ${items}
+          </div>
+          <div class="proj-rows-end reveal" style="transition-delay:.16s"></div>
+          <div class="proj-legend reveal" style="transition-delay:.2s">data from: 🌱 plants · 🧫 bacteria · 👤 human</div>
+        </section>`;
+    }
+
+    function renderExperience(e) {
+      const items = e.items.map((item, i) => `
+        <div class="reveal" style="transition-delay:${(0.1 + i * 0.02).toFixed(2)}s">
+          <div class="entry-head">
+            <span class="e-when">${h(item.period)}</span>
+            <span class="e-role">${h(item.role)}</span>
+            <span class="e-org">${h(item.org)}</span>
+            <span class="e-where">${h(item.location)}</span>
+          </div>
+          <div class="entry-body">
+            <div class="e-dept">${h(item.dept)}</div>
+            <ul class="e-bullets">
+              ${item.bullets.map(b => `<li>${h(b)}</li>`).join('')}
+            </ul>
+          </div>
+        </div>`).join('');
+      return `
+        <section class="section" id="experience">
+          <span class="sec-tag reveal">${h(e.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">Experience</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="entry-list">
+            ${items}
+          </div>
+          <div class="entry-list-end reveal" style="transition-delay:.2s"></div>
+        </section>`;
+    }
+
+    function renderEducation(ed) {
+      const items = ed.items.map(item => `
+        <div class="edu-item">
+          <span class="edu-year">${h(item.year)}</span>
+          <span class="edu-deg">${h(item.degree)}</span>
+          <span class="edu-inst">${h(item.institution)}</span>
+        </div>`).join('');
+      return `
+        <section class="section" id="education">
+          <span class="sec-tag reveal">${h(ed.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">Education</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="edu-list reveal" style="transition-delay:.12s">
+            ${items}
+          </div>
+          <div class="edu-list-end reveal" style="transition-delay:.16s"></div>
+        </section>`;
+    }
+
+    function renderSkills(sk) {
+      const items = sk.items.map(item => `
+        <div class="skill-row">
+          <span class="sk-cat">${h(item.category)}</span>
+          <span class="sk-val">${h(item.value)}</span>
+        </div>`).join('');
+      return `
+        <section class="section" id="skills">
+          <span class="sec-tag reveal">${h(sk.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">Skills</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="skill-rows reveal" style="transition-delay:.12s">
+            ${items}
+          </div>
+          <div class="skill-rows-end reveal" style="transition-delay:.16s"></div>
+        </section>`;
+    }
+
+    function renderPublications(p) {
+      let lastYear = null;
+      const items = p.items.filter(item => !item.hidden).map((item, i) => {
+        const cont = item.year === lastYear;
+        lastYear = item.year;
+        return `
+        <div class="pub-item${cont ? ' pub-cont' : ''}" id="${pubId(item, i)}">
+          <div class="pub-year">${h(item.year)}</div>
+          <div>
+            <div class="pub-title">${h(item.title)}${item.badge ? ` <span class="badge">${h(item.badge)}</span>` : ''}</div>
+            <div class="pub-auth">${boldify(item.authors, item.boldAuthor)}</div>
+            <div class="pub-venue">${item.venue.includes('arXiv') ? `<em>Preprint · </em>${h(item.venue.replace(/arXiv preprint,?\s*/i, ''))}` : h(item.venue)}</div>
+            ${item.doi ? `<a href="https://doi.org/${h(item.doi)}" target="_blank" rel="noopener" class="pub-doi">${item.venue.includes('arXiv') ? 'link to preprint' : 'link to publisher'} ↗</a>` : ''}
+          </div>
+        </div>`;
+      }).join('');
+      return `
+        <section class="section" id="publications">
+          <span class="sec-tag reveal">${h(p.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">Publications</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="pub-list reveal" style="transition-delay:.12s">
+            ${items}
+          </div>
+        </section>`;
+    }
+
+    function renderAwards(a) {
+      let lastYear = null;
+      const items = a.items.map(item => {
+        const cont = item.year === lastYear;
+        lastYear = item.year;
+        const location = [item.venue, item.country].filter(Boolean).join(' · ') + (item.virtual ? ' (virtual)' : '');
+        const linkPart = item.url ? ` · <a href="${h(item.url)}" target="_blank" rel="noopener">${h(item.urlLabel || 'link')} ↗</a>` : '';
+        return `
+        <div class="line-item${cont ? ' li-cont' : ''}">
+          <div class="li-year">${h(item.year)}</div>
+          <div>
+            <div class="talk-title">${h(item.title)}</div>
+            <div class="talk-meta">${h(location)}${linkPart}</div>
+          </div>
+        </div>`;
+      }).join('');
+      return `
+        <section class="section" id="awards">
+          <span class="sec-tag reveal">${h(a.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">Awards & Honors</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="reveal" style="transition-delay:.12s">
+            ${items}
+          </div>
+        </section>`;
+    }
+
+    function renderTalks(t) {
+      const items = t.items.map(item => {
+        const location = [item.city, item.country].filter(Boolean).join(', ') + (item.virtual ? ' (virtual)' : '');
+        const titleEl = item.url
+          ? `<a href="${h(item.url)}" target="_blank" rel="noopener" class="talk-title">${h(item.title)} ↗</a>`
+          : `<div class="talk-title">${h(item.title)}</div>`;
+        return `
+        <div class="line-item">
+          <div class="li-year">${h(item.year)}</div>
+          <div>
+            ${titleEl}
+            <div class="talk-meta">${h(item.venue)} · ${h(location)}</div>
+          </div>
+        </div>`;
+      }).join('');
+      return `
+        <section class="section" id="talks">
+          <span class="sec-tag reveal">${h(t.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">Selected Talks</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="reveal" style="transition-delay:.12s">
+            ${items}
+          </div>
+        </section>`;
+    }
+
+    function renderNews(n) {
+      const items = n.items.length === 0
+        ? '<p style="font-size:13px;padding:16px 0">Coming soon.</p>'
+        : n.items.map(item => `
+            <div class="line-item">
+              <div class="li-year">${h(item.date)}</div>
+              <div class="li-text">${h(item.text)}${item.linkUrl ? ` <a href="${h(item.linkUrl)}" target="_blank" rel="noopener">${h(item.linkLabel)} ↗</a>` : ''}</div>
+            </div>`).join('');
+      return `
+        <section class="section" id="news">
+          <span class="sec-tag reveal">${h(n.tag)}</span>
+          <h2 class="sec-h reveal" style="transition-delay:.04s">News</h2>
+          <hr class="sec-rule reveal" style="transition-delay:.08s">
+          <div class="reveal" style="transition-delay:.12s">
+            ${items}
+          </div>
+        </section>`;
+    }
+
+
+    /* ── behaviours (run after DOM is populated) ── */
+    function initTooltips() {
+      document.querySelectorAll('.proj-row').forEach(function (row) {
+        const projRows = row.closest('.proj-rows');
+
+        const tip = row.querySelector('.proj-tip');
+        if (!tip) return;
+        document.body.appendChild(tip);
+
+        let s = parseInt(tip.dataset.seed, 10) || 7;
+        const rng = () => { s = (s * 1664525 + 1013904223) & 0xffffffff; return (s >>> 0) / 0xffffffff; };
+        const src = (tip.style.backgroundImage || '').slice(5, -2);
+        if (src) {
+          const probe = new Image();
+          probe.onerror = () => {
+            tip.style.backgroundImage = '';
+            for (let i = 0; i < 24 * 16; i++) {
+              const c = document.createElement('span');
+              c.style.cssText = 'display:block;background:#5CE65C;opacity:' + (rng() * 0.8).toFixed(2);
+              tip.appendChild(c);
+            }
+          };
+          probe.src = src;
+        }
+
+        row.addEventListener('click', (e) => {
+          if (e.target.closest('.proj-expanded')) return;
+          const wasActive = row.classList.contains('active');
+          const allRows = Array.from(projRows.querySelectorAll('.proj-row'));
+          if (wasActive) {
+            // rows above were shrunk to 26px and will expand to 64px (+38px each),
+            // pushing this row down — scroll to compensate so header stays under mouse
+            const rowShift = allRows.indexOf(row) * (64 - 26);
+            projRows.classList.add('no-transition'); // close instantly, no height animation
+            projRows.querySelectorAll('.proj-row').forEach(r => r.classList.remove('active'));
+            document.querySelectorAll('.proj-tip').forEach(t => t.classList.remove('show'));
+            projRows.classList.remove('has-open');
+            sessionStorage.removeItem('openProj');
+            if (rowShift > 0) window.scrollBy({ top: rowShift, behavior: 'instant' });
+            requestAnimationFrame(() => projRows.classList.remove('no-transition'));
+          } else {
+            // close all, open this one
+            projRows.querySelectorAll('.proj-row').forEach(r => r.classList.remove('active'));
+            document.querySelectorAll('.proj-tip').forEach(t => t.classList.remove('show'));
+            projRows.classList.remove('has-open');
+            row.classList.add('active');
+            projRows.classList.add('has-open');
+            sessionStorage.setItem('openProj', row.dataset.projId);
+          }
+        });
+
+        row.addEventListener('mouseenter', (e) => {
+          if (row.classList.contains('active')) return;
+          const tw = tip.offsetWidth, th = tip.offsetHeight;
+          const vw = window.innerWidth, vh = window.innerHeight;
+          let x = e.clientX + 12, y = e.clientY - th / 2;
+          if (x + tw > vw - 8) x = e.clientX - tw - 12;
+          if (y < 8) y = 8;
+          if (y + th > vh - 8) y = vh - th - 8;
+          tip.style.left = x + 'px';
+          tip.style.top  = y + 'px';
+          const deg = (Math.random() * 6 - 3).toFixed(1);
+          tip.style.transform = `scale(1) rotate(${deg}deg)`;
+          tip.classList.add('show');
+        });
+        row.addEventListener('mouseleave', () => tip.classList.remove('show'));
+        row.addEventListener('mousemove', function (e) {
+          const tw = tip.offsetWidth, th = tip.offsetHeight;
+          const vw = window.innerWidth, vh = window.innerHeight;
+          let x = e.clientX + 12, y = e.clientY - th / 2;
+          if (x + tw > vw - 8) x = e.clientX - tw - 12;
+          if (y < 8) y = 8;
+          if (y + th > vh - 8) y = vh - th - 8;
+          tip.style.left = x + 'px';
+          tip.style.top  = y + 'px';
+        });
+      });
+    }
+
+    function initReveal() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+      }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }
+
+    function initNav() {
+      const navLinks  = Array.from(document.querySelectorAll('#sb-nav a'));
+      const navIds    = new Set(navLinks.map(a => a.getAttribute('href').slice(1)));
+      const sections  = Array.from(document.querySelectorAll('section[id]')).filter(s => navIds.has(s.id));
+
+      const sbLatest = document.querySelector('.sb-latest');
+
+      function update() {
+        const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+        const active = atBottom
+          ? sections[sections.length - 1]
+          : sections.reduce((cur, s) => s.getBoundingClientRect().top <= 80 ? s : cur, sections[0]);
+        const id = active.id;
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+        if (sbLatest) {
+          const color = active.style.getPropertyValue('--accent');
+          if (color) sbLatest.style.setProperty('--accent', color);
+        }
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    }
+
+    /* ── per-section accent colors ── */
+    function initSectionColors() {
+      const colors = {
+        hello:        '#9BBF30',  // green
+        work:         '#000000',
+        publications: '#F06040',  // red
+        talks:        '#E8A0B4',  // pink
+        awards:       '#4AAFC8',  // medium teal blue (readable)
+        about:        '#7A8C35',  // olive
+        news:         '#2E6FA3',  // darker blue
+      };
+      const navColors = { ...colors, awards: '#7EC8D8', work: '#000000' };
+
+      Object.entries(colors).forEach(([id, color]) => {
+        const el = document.getElementById(id);
+        if (el) el.style.setProperty('--accent', color);
+      });
+
+      document.querySelectorAll('#sb-nav a').forEach(link => {
+        const id = link.getAttribute('href').slice(1);
+        if (navColors[id]) link.style.setProperty('--accent', navColors[id]);
+      });
+    }
+
+    /* ── bootstrap ── */
+    async function init() {
+      try {
+        const data = await fetch('./resume.json').then(r => r.json());
+        document.title = data.personal.firstName + ' ' + data.personal.lastName;
+        document.getElementById('sidebar').innerHTML = renderSidebar(data);
+        document.getElementById('main').innerHTML = [
+          renderHello(data),
+          renderWork(data.work, data.publications),
+          renderPublications(data.publications),
+          renderTalks(data.talks),
+          renderAwards(data.awards),
+          renderAbout(data),
+          renderNews(data.news),
+          `<footer class="site-footer">© ${h(data.personal.firstName)} ${h(data.personal.lastName)}, ${h(data.personal.year)}</footer>`
+        ].join('');
+        initTooltips();
+        const savedProj = sessionStorage.getItem('openProj');
+        if (savedProj) {
+          const savedRow = document.querySelector(`.proj-row[data-proj-id="${savedProj}"]`);
+          if (savedRow) {
+            savedRow.classList.add('active');
+            savedRow.closest('.proj-rows').classList.add('has-open');
+          }
+        }
+        initReveal();
+        initSectionColors();
+        initNav();
+      } catch (e) {
+        document.body.innerHTML =
+          '<p style="padding:2rem;font-family:sans-serif">Could not load resume.json (' + e.message +
+          '). Serve over HTTP — e.g. <code>python3 -m http.server</code></p>';
+      }
+    }
+
+    init();
+  </script>
+
+</body>
 </html>

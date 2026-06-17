@@ -1,0 +1,706 @@
+{
+  "personal": {
+    "firstName": "Astrid",
+    "lastName": "van den Brandt",
+    "heroNameLines": [
+      "Astrid",
+      "van den",
+      "Brandt"
+    ],
+    "role": [
+      "Data Visualization Researcher and Designer"
+    ],
+    "bioIntro": "I research and design interactive data visualization tools that help domain experts explore complex data.",
+    "bioLove": "I enjoy working at the intersection of visual design, HCI, and computational methods to tackle visualization challenges in biomedical and life sciences. Problems that need both tailored craft and big-picture overviews to enable discovery.",
+    "bioWho": "Currently a postdoc at the HIDIVE lab, Harvard Medical School. I received my PhD from Eindhoven University of Technology, in the Department of Mathematics and Computer Science. I have designed tools for genomics, clinical data, and AI-assisted authoring.",
+    "photo": "img/astrid-vandenbrandt.jpg",
+    "hidiveUrl": "https://hidivelab.org",
+    "email": "astrid_vandenbrandt@hms.harvard.edu",
+    "phone": "+31618643441",
+    "linkedinUrl": "https://linkedin.com/in/astridvandenbrandt",
+    "linkedinLabel": "linkedin.com/in/astridvandenbrandt",
+    "website": "astridvandenbrandt.github.io",
+    "cvAbout": "Data visualization researcher and designer with 6+ years of experience building interactive tools for complex biomedical and genomics data. I combine HCI research methods with hands-on software development, engaging in the whole process of designing, building, and evaluating systems.",
+    "year": "2026",
+    "cvPdf": "CV_Astrid_van_den_Brandt.pdf",
+    "scholarUrl": "https://scholar.google.com/citations?user=_SENdBwAAAAJ&hl=en&oi=ao"
+  },
+  "nav": [
+    {
+      "href": "#hello",
+      "label": "Hello"
+    },
+    {
+      "href": "#work",
+      "label": "Projects"
+    },
+    {
+      "href": "#publications",
+      "label": "Publications"
+    },
+    {
+      "href": "#talks",
+      "label": "Selected Talks"
+    },
+    {
+      "href": "#awards",
+      "label": "Awards & Honors"
+    },
+    {
+      "href": "#about",
+      "label": "About"
+    },
+    {
+      "href": "#news",
+      "label": "News"
+    }
+  ],
+  "work": {
+    "tag": "#02",
+    "title": "Projects",
+    "items": [
+      {
+        "num": "01",
+        "color": "#9BBF30",
+        "name": "PanVA",
+        "subtitle": "Variant Analysis within Pangenomes",
+        "venue": "IEEE TVCG 2024",
+        "abstract": "PanVA is a visual analytics system for exploring genetic variant data within pangenomes. It enables genomics researchers to compare sequence variation across multiple reference genomes simultaneously through coordinated, interactive views. The project was developed in collaboration with 9 biotechnology companies and plant breeders in the Netherlands and Belgium, all associated with the Virtual Laboratory for Plant Breeding.",
+        "demo": "img/panva-demo.gif",
+        "relatedPubs": [
+          9,
+          11
+        ],
+        "code": "https://github.com/PanBrowse/PanVA",
+        "website": "https://panbrowse.github.io/PanVA/",
+        "tags": [
+          "design study",
+          "pangenomics",
+          "variant analysis",
+          "🌱",
+          "🧫"
+        ],
+        "image": "img/panva-screenshot_crop.png",
+        "id": "panva",
+        "seed": 42,
+        "period": "2020–2023"
+      },
+      {
+        "num": "02",
+        "color": "#E8A0B4",
+        "name": "Multipla",
+        "subtitle": "Multiscale Pangenomic Locus Analysis",
+        "venue": "EuroVis 2025",
+        "abstract": "Multipla supports multiscale exploration of pangenomic loci, revealing structural variation and sequence context at different levels of detail. The project was in collaboration with visualization experts from Sweden as well as bioinformaticians specialized in rose and pepper genetics.\n\nRelated to this project on structural variation, we also looked at redesigning sequence tube maps to support overview and detail views with aggregations.",
+        "demo": "img/multipla-demo.gif",
+        "relatedPubs": [
+          4,
+          5
+        ],
+        "code": "https://github.com/PanBrowse/PanVA-dev",
+        "website": "",
+        "tags": [
+          "design study",
+          "pangenomics",
+          "multiscale",
+          "structural variation",
+          "🌱"
+        ],
+        "image": "img/multipla-screenshot_crop.png",
+        "id": "multipla",
+        "seed": 77,
+        "period": "2023–2025"
+      },
+      {
+        "num": "03",
+        "color": "#7EC8D8",
+        "name": "Visualization Authoring",
+        "subtitle": "Personas & Blended Interfaces",
+        "venue": "IEEE TVCG 2025",
+        "abstract": "This project investigates how genomics researchers author interactive visualizations. Through interviews and probes with 30 domain experts we identified key user personas and authoring tasks and techniques, from which we distilled key design considerations.\n\nA parallel project explored how different authoring techniques can be combined in one interface, to support the creation of expressive and learnable authoring tools.",
+        "demo": "img/authoring-screenshot.png",
+        "relatedPubs": [
+          6,
+          7,
+          8
+        ],
+        "code": "",
+        "website": "",
+        "tags": [
+          "authoring techniques",
+          "probe",
+          "interview study",
+          "genomics"
+        ],
+        "image": "img/authoring-tooltip.png",
+        "imageFit": "contain",
+        "id": "authoring",
+        "seed": 13,
+        "period": "2023–2024",
+        "demo2": "img/blace-image.png"
+      },
+      {
+        "num": "04",
+        "color": "#F06040",
+        "name": "Agentic Authoring",
+        "subtitle": "Interactive Multiscale Visualizations",
+        "venue": "In progress",
+        "abstract": "Exploring how LLM-powered agents can assist domain experts in authoring interactive genomics visualizations, reducing the technical barrier while preserving expressive control over multiscale data visualizations. We explored vanilla LLM capabilities versus different agentic setups to understand the strengths and limitations of several architectural schemes in supporting visualization authoring.",
+        "demo": "img/teaser-corces.png",
+        "relatedPubs": [
+          0
+        ],
+        "code": "",
+        "website": "",
+        "tags": [
+          "llm",
+          "authoring",
+          "genomics",
+          "👤"
+        ],
+        "image": "img/agentic-tooltip.png",
+        "imageFit": "contain",
+        "id": "agentic",
+        "seed": 11,
+        "period": "2025–present"
+      },
+      {
+        "num": "05",
+        "color": "#556B2F",
+        "name": "Sycamore",
+        "subtitle": "Synthetic Personas",
+        "venue": "Under Review",
+        "abstract": "Recruiting many domain experts for user studies is important, but also very resource intensive. In this project we explored the potential of synthetic user personas — not to replace, but to complement human user studies — using LLM-generated personas grounded in real user persona data.",
+        "demo": "img/sycamore-teaser.png",
+        "relatedPubs": [
+          1
+        ],
+        "code": "",
+        "website": "",
+        "tags": [
+          "llm",
+          "synthetic personas",
+          "genomics"
+        ],
+        "image": "img/sycamore-tooltip-new.png",
+        "imageFit": "contain",
+        "id": "sycamore",
+        "seed": 99,
+        "period": "2026–present"
+      }
+    ]
+  },
+  "experience": {
+    "tag": "#ex",
+    "items": [
+      {
+        "period": "Oct 2025 – Present",
+        "role": "Postdoctoral Researcher",
+        "org": "Harvard Medical School",
+        "location": "Boston, MA",
+        "dept": "Dept. of Biomedical Informatics — HIDIVE Lab",
+        "bullets": [
+          "Leading projects on LLM-assisted authoring of interactive visualizations, reducing the technical barrier for domain experts.",
+          "Building interactive visualization tools for large-scale genomics and biomedical data; collaborating with scientists, software developers and UX/UI designers."
+        ]
+      },
+      {
+        "period": "Aug 2020 – Sept 2025",
+        "role": "PhD Researcher, Data Visualization",
+        "org": "Eindhoven University of Technology & Wageningen University and Research",
+        "location": "Eindhoven, NL",
+        "dept": "Visual Analytics group, Dept. of Mathematics & Computer Science · Bioinformatics Group, WUR",
+        "bullets": [
+          "Designed, built, and deployed interactive visualization systems (PanVA, Multipla) enabling genomics researchers to explore pangenomes and sequence variants across multiple references.",
+          "Led user studies on visualization authoring techniques; published first-author work in IEEE TVCG and EuroVis."
+        ],
+        "thesis": "Visualization Design in Genomics: from Pangenome Analysis to Authoring",
+        "thesisBadge": "Best PhD Thesis Award"
+      },
+      {
+        "period": "Aug – Dec 2023",
+        "role": "Visiting Graduate Student",
+        "org": "Harvard Medical School",
+        "location": "Boston, MA",
+        "dept": "Dept. of Biomedical Informatics — HIDIVE Lab",
+        "bullets": [
+          "Researched authoring requirements and co-designed Blace, a framework blending visualization authoring techniques."
+        ]
+      },
+      {
+        "period": "Mar – Sept 2019",
+        "role": "Visiting Scholar",
+        "org": "UC San Diego",
+        "location": "San Diego, CA",
+        "dept": "Shiley Eye Institute — Computational Ophthalmology",
+        "bullets": [
+          "Built a visual analytics tool for monitoring glaucoma progression in collaboration with vision scientists."
+        ]
+      },
+      {
+        "period": "Jan 2018 – Apr 2020",
+        "role": "Freelance Data Scientist",
+        "org": "JADS MKB Datalab",
+        "location": "Den Bosch, NL",
+        "dept": "Applied data science & visualization for SMEs",
+        "bullets": [
+          "Delivered data-science and visualization projects for small businesses across construction, HR, and food-waste management."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "tag": "#ed",
+    "items": [
+      {
+        "year": "2020–2025",
+        "degree": "PhD, Data Visualization",
+        "institution": "Eindhoven University of Technology"
+      },
+      {
+        "year": "2017–2020",
+        "degree": "MSc, Data Science & Entrepreneurship",
+        "institution": "TU Eindhoven & Tilburg University"
+      },
+      {
+        "year": "2013–2016",
+        "degree": "BSc, Industrial Design",
+        "institution": "Eindhoven University of Technology"
+      }
+    ]
+  },
+  "skills": {
+    "tag": "#sk",
+    "items": [
+      {
+        "category": "Front-End",
+        "value": "JavaScript, TypeScript, HTML/CSS, Vue, (React), D3.js, Vega-Lite, Pixi.js"
+      },
+      {
+        "category": "Data & Back-End",
+        "value": "Python, SQL, Flask, HuggingFace, (PyTorch), AutoGen, Slurm, Git, Docker"
+      },
+      {
+        "category": "Design",
+        "value": "Figma, Illustrator, InDesign, Premiere Pro"
+      }
+    ]
+  },
+  "softSkills": {
+    "items": [
+      {
+        "skill": "user research",
+        "note": "interviews, probes & workshop facilitation"
+      },
+      {
+        "skill": "scientific writing",
+        "note": "first-author papers in top venues"
+      },
+      {
+        "skill": "public speaking",
+        "note": "conference talks & invited presentations"
+      },
+      {
+        "skill": "mentoring",
+        "note": "BSc, MSc students and interns"
+      },
+      {
+        "skill": "giving feedback",
+        "note": "code review & design critique"
+      },
+      {
+        "skill": "visual communication",
+        "note": "posters, slides & presentation design"
+      },
+      {
+        "skill": "creativity",
+        "note": "design novel visual encodings"
+      },
+      {
+        "skill": "resilience",
+        "note": "meeting conference deadlines"
+      }
+    ]
+  },
+  "publications": {
+    "tag": "#03",
+    "items": [
+      {
+        "year": "2026",
+        "title": "Agentic Authoring of Interactive Multiview Visualizations in Genomics",
+        "authors": "A. van den Brandt, K. Choe, S. L'Yi, D. Lange, N. Gehlenborg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "arXiv preprint, 2026",
+        "doi": "10.48550/arXiv.2606.00370",
+        "badge": null,
+        "cv": true
+      },
+      {
+        "year": "2026",
+        "title": "Sycamore: Characterizing Synthetic Personas for Evaluating Genomics Visualization Retrieval",
+        "authors": "H. N. Nguyen, A. van den Brandt, N. Gehlenborg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "arXiv preprint, 2026",
+        "doi": "10.48550/arXiv.2605.08630",
+        "badge": null
+      },
+      {
+        "year": "2026",
+        "title": "YAC: Bridging Natural Language and Interactive Visual Exploration with Generative AI for Biomedical Data Discovery",
+        "authors": "D. Lange, S. Gao, P. Sui, P. Misner, A. van den Brandt, A. Money, N. Akhmetov, L. Choy, M. Zitnik, N. Gehlenborg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "arXiv preprint, 2026",
+        "doi": "10.48550/arXiv.2509.19182",
+        "badge": null
+      },
+      {
+        "year": "2025",
+        "title": "Gosling Designer: a Platform to Democratize Construction and Sharing of Genomics Data Visualization Tools",
+        "authors": "S. L'Yi, J. Conroy, P. Misner, D. Kouřil, A. van den Brandt, L. Choy, N. Abdennur, N. Gehlenborg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "arXiv preprint, 2025",
+        "doi": "10.48550/arXiv.2510.24888",
+        "badge": null
+      },
+      {
+        "year": "2025",
+        "title": "Multipla: Multiscale Pangenomic Locus Analysis",
+        "authors": "A. van den Brandt, E. Ståhlbom, F.J.M. van Workum, H. van de Wetering, C. Lundström, S. Smit, A. Vilanova",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "Computer Graphics Forum, 2025",
+        "doi": "10.1111/cgf.70147",
+        "badge": null
+      },
+      {
+        "year": "2025",
+        "title": "Sequence Tube Maps for Structural Variants",
+        "authors": "A. van den Brandt, J. P. J. Geelen, H. van de Wetering",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "EuroVis Short Papers, 2025",
+        "doi": "10.2312/EVS.20251091",
+        "badge": null
+      },
+      {
+        "year": "2025",
+        "title": "Understanding Visualization Authoring Techniques for Genomics Data in the Context of Personas and Tasks",
+        "authors": "A. van den Brandt, S. L'Yi, H. N. Nguyen, A. Vilanova, N. Gehlenborg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "IEEE Transactions on Visualization and Computer Graphics (TVCG), 2025",
+        "doi": "10.1109/TVCG.2024.3456298",
+        "badge": null,
+        "cv": true
+      },
+      {
+        "year": "2025",
+        "title": "Learnable and Expressive Visualization Authoring through Blended Interfaces",
+        "authors": "S. L'Yi, A. van den Brandt, H. N. Nguyen, E. Adams, N. Gehlenborg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "IEEE Transactions on Visualization and Computer Graphics (TVCG), 2025",
+        "doi": "10.1109/TVCG.2024.3456598",
+        "badge": "Best Paper Honorable Mention"
+      },
+      {
+        "year": "2025",
+        "title": "Characterizing Multimodal Interaction in Visualization Authoring Tools",
+        "authors": "A. van den Brandt, S. L'Yi, H. N. Nguyen, A. Vilanova, N. Gehlenborg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "arXiv preprint, 2025",
+        "doi": "10.48550/arXiv.2509.08953",
+        "badge": null
+      },
+      {
+        "year": "2024",
+        "title": "PanVA: Variant Analysis within Pangenomes",
+        "authors": "A. van den Brandt, E. M. Jonkheer, D.-J. M. van Workum, H. van de Wetering, S. Smit, A. Vilanova",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "IEEE Transactions on Visualization and Computer Graphics (TVCG), 2024",
+        "doi": "10.1109/TVCG.2023.3282364",
+        "badge": null,
+        "cv": true
+      },
+      {
+        "year": "2020",
+        "title": "GLANCE: Visual Analytics for Monitoring Glaucoma Progression",
+        "authors": "A. van den Brandt, Mark Christopher, Linda M. Zangwill, Jasmin Rezapour, Christopher Bowd, Sally L. Baxter, Derek S. Welsbie, Andrew Camp, Sasan Moghimi, Jiun L. Do, Robert N. Weinreb, Chris C.P. Snijders, Michel A. Westenberg",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "Eurographics Workshop on Visual Computing for Biology & Medicine (VCBM), 2020",
+        "doi": "10.2312/VCBM.20201175",
+        "badge": "Best Paper Award"
+      },
+      {
+        "year": "2025",
+        "title": "PanVA: a visual analytics tool for pangenomic variant analysis",
+        "authors": "A. van den Brandt, F. de Vries, R. van Esch, S. Vlugter, D. van Workum, H. van de Wetering, A. Vilanova, S. Smit",
+        "boldAuthor": "A. van den Brandt",
+        "venue": "bioRxiv preprint, 2025",
+        "doi": "10.1101/2025.06.23.661080",
+        "badge": null,
+        "hidden": true
+      }
+    ]
+  },
+  "languages": {
+    "items": [
+      {
+        "language": "Dutch",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "fluent"
+      },
+      {
+        "language": "French",
+        "level": "beginner"
+      }
+    ]
+  },
+  "talks": {
+    "tag": "#04",
+    "items": [
+      {
+        "year": "2026",
+        "title": "LLM-Assisted Authoring of Genomics Visualizations",
+        "venue": "Dagstuhl Seminar 26101",
+        "city": "Dagstuhl",
+        "country": "Germany"
+      },
+      {
+        "year": "2025",
+        "title": "Multipla: Multiscale Pangenomic Locus Analysis",
+        "venue": "EuroVis 2025",
+        "city": "Luxembourg City",
+        "country": "Luxembourg"
+      },
+      {
+        "year": "2024",
+        "title": "Understanding Visualization Authoring Techniques",
+        "venue": "IEEE VIS 2024",
+        "city": "Tampa",
+        "country": "USA",
+        "virtual": true
+      },
+      {
+        "year": "2023",
+        "title": "PanVA: Pangenomic Variant Analysis",
+        "venue": "IEEE VIS 2023",
+        "city": "Melbourne",
+        "country": "Australia"
+      },
+      {
+        "year": "2020",
+        "title": "GLANCE: Visual Analytics for Glaucoma Progression",
+        "venue": "VCBM 2020",
+        "city": "Tübingen",
+        "country": "Germany",
+        "virtual": true
+      }
+    ]
+  },
+  "awards": {
+    "tag": "#05",
+    "items": [
+      {
+        "year": "2026",
+        "title": "Best PhD Thesis Award",
+        "venue": "EuroVis 2026",
+        "country": "UK",
+        "url": "https://www.eg.org/wp/eurographics-awards-programme/eurovis-phd-award/",
+        "urlLabel": "award page"
+      },
+      {
+        "year": "2026",
+        "title": "Travel Fellowship Recipient",
+        "venue": "ISMB 2026",
+        "country": "USA"
+      },
+      {
+        "year": "2026",
+        "title": "Invited participant, Dagstuhl Seminar 26101",
+        "venue": "Faithful Visualisations for Biology",
+        "country": "Germany",
+        "url": "https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/26101",
+        "urlLabel": "seminar page"
+      },
+      {
+        "year": "2024",
+        "title": "Best Paper, Honorable Mention",
+        "venue": "IEEE VIS 2024",
+        "country": "USA",
+        "virtual": true,
+        "url": "https://ieeevis.org/year/2025/info/history/best-paper-awards",
+        "urlLabel": "best papers"
+      },
+      {
+        "year": "2022",
+        "title": "Best Poster Award",
+        "venue": "EuroVis 2022",
+        "country": "Italy"
+      },
+      {
+        "year": "2022",
+        "title": "Best Demo Award",
+        "venue": "NWO ICT Open",
+        "country": "Netherlands"
+      },
+      {
+        "year": "2020",
+        "title": "Best Paper Award",
+        "venue": "VCBM 2020",
+        "country": "Germany",
+        "virtual": true
+      }
+    ]
+  },
+  "service": {
+    "tag": "#sv",
+    "items": [
+      {
+        "year": "2026",
+        "venue": "PacificVis",
+        "track": "VisNotes",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2026",
+        "venue": "EuroVis",
+        "track": "Posters and Demos",
+        "role": "IPC Member"
+      },
+      {
+        "year": "2026",
+        "venue": "IEEE VIS",
+        "track": "Short Papers",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2026",
+        "venue": "IEEE VIS",
+        "track": "Posters",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2025",
+        "venue": "CHI",
+        "track": "Full Papers",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2024",
+        "venue": "IEEE VIS",
+        "track": "Bio+Med+Vis Challenge",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2024",
+        "venue": "IEEE VIS",
+        "track": "Short Papers",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2024",
+        "venue": "IEEE VIS",
+        "track": "Full Papers",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2024",
+        "venue": "PacificVis",
+        "track": "VisNotes",
+        "role": "Reviewer"
+      },
+      {
+        "year": "2024",
+        "venue": "EuroVis",
+        "track": "Full Papers",
+        "role": "Reviewer"
+      }
+    ]
+  },
+  "volunteering": {
+    "tag": "#vo",
+    "items": [
+      {
+        "period": "2025–present",
+        "role": "Publicity Chair",
+        "org": "BioVis",
+        "cv": true
+      },
+      {
+        "period": "2021–2025",
+        "role": "Treasurer, PhD Committee",
+        "org": "Eindhoven University of Technology"
+      },
+      {
+        "period": "2024",
+        "role": "Student Volunteer",
+        "org": "EuroVis 2024, Odense, Denmark"
+      },
+      {
+        "period": "2018",
+        "role": "Host, 4TU Exhibition",
+        "org": "Dutch Design Week, Netherlands",
+        "cv": true
+      },
+      {
+        "period": "2015",
+        "role": "Volunteer, Afdeling Buitengewone Zaken",
+        "org": "STRP Biennial, Netherlands",
+        "cv": true
+      }
+    ]
+  },
+  "news": {
+    "tag": "#06",
+    "items": [
+      {
+        "date": "9 June 2026",
+        "text": "I am very honored to have received the EuroVis 2026 Best PhD Thesis Award! This would not have been possible without the support of my supervisors and colleagues at TU/e, WUR, and Harvard.",
+        "linkLabel": "EuroVis PhD Award",
+        "linkUrl": "https://www.eg.org/wp/eurographics-awards-programme/eurovis-phd-award/"
+      },
+      {
+        "date": "2 June 2026",
+        "text": "Grateful to receive a travel grant for BioVis @ ISMB 2026.",
+        "linkLabel": null,
+        "linkUrl": null
+      },
+      {
+        "date": "5 May 2026",
+        "text": "Our abstract was accepted for a lightning talk at BioVis @ ISMB 2026.",
+        "linkLabel": null,
+        "linkUrl": null
+      },
+      {
+        "date": "23 Feb 2026",
+        "text": "Joined the International Program Committee of the EuroVis 2026 Posters and Demos track.",
+        "linkLabel": null,
+        "linkUrl": null
+      },
+      {
+        "date": "6 Oct 2025",
+        "text": "Started my postdoc at the HIDIVE Lab, Harvard Medical School! 🎉",
+        "linkLabel": null,
+        "linkUrl": null
+      },
+      {
+        "date": "15 Sep 2025",
+        "text": "My PhD research on pangenome visualization was featured in TU/e's Cursor.",
+        "linkLabel": "Read article",
+        "linkUrl": "https://www.tue.nl/en/news-and-events/news-overview/15-09-2025-visualization-of-pangenome-data-for-a-better-understanding-of-genetic-diversity"
+      },
+      {
+        "date": "11 Sep 2025",
+        "text": "Successfully defended my PhD thesis at Eindhoven University of Technology and received my doctorate degree. 🎉",
+        "linkLabel": null,
+        "linkUrl": null
+      },
+      {
+        "date": "1 Feb 2025",
+        "text": "Became Publicity Chair at BioVis, the symposium on biological data visualization.",
+        "linkLabel": "BioVis 2026",
+        "linkUrl": "http://biovis.net/2026/"
+      }
+    ]
+  }
+}
