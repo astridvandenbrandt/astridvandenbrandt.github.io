@@ -21,6 +21,604 @@
     "linkedinLabel": "linkedin.com/in/astridvandenbrandt",
     "website": "astridvandenbrandt.github.io",
     "cvAbout": "Data visualization researcher and designer with 6+ years of experience building interactive tools for complex biomedical and genomics data. I combine HCI research methods with hands-on software development, engaging in the whole process of designing, building, and evaluating systems.",
+    "bioFlavors": {
+      "biomedical": {
+        "bioIntro": "I research and design interactive data visualization tools that help domain experts explore complex data.",
+        "bioLove": "I enjoy working at the intersection of visual design, HCI, and computational methods to tackle visualization challenges in biomedical and life sciences. Problems that need both tailored craft and big-picture overviews to enable discovery.",
+        "bioWho": "Currently a postdoc at the HIDIVE lab, Harvard Medical School. I received my PhD from Eindhoven University of Technology, in the Department of Mathematics and Computer Science. I have designed tools for genomics, clinical data, and AI-assisted authoring.",
+        "cvAbout": "Data visualization researcher and designer with 6+ years of experience building interactive tools for complex biomedical and genomics data. I combine visual design, HCI research and data science methods, and enjoy working at all stages from concept to implementation and evaluation. My current focus is on natural language integration for constructing and exploring complex data visualizations.",
+        "cvTightLayout": true
+      },
+      "generic": {
+        "bioIntro": "I research and design interactive tools that help analysts and domain experts explore and make sense of complex data.",
+        "bioLove": "I enjoy working at the intersection of visual design, HCI, and computational methods to make analytical data more explorable and accessible. Problems where both tailored interface craft and the underlying data infrastructure need to come together to enable discovery.",
+        "bioWho": "Currently a postdoc at the HIDIVE lab, Harvard Medical School. I received my PhD from Eindhoven University of Technology, in the Department of Mathematics and Computer Science. I have designed tools for large-scale genomics data, clinical data workflows, and AI-assisted authoring.",
+        "cvAbout": "Data visualization researcher and designer with 6+ years of experience building interactive tools for complex large-scale datasets, primarily in life sciences and genomics. I combine HCI research methods with hands-on software development, engaging in the whole process of designing, building, and evaluating systems."
+      },
+      "cusp": {
+        "cvOutputDir": "applications/cusp",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvMarkWords": [
+          "Data visualization"
+        ],
+        "cvRoleLine1": "Data Visualization",
+        "cvRoleLine2": "Designer & Developer",
+        "cvCalloutRole": "Data Visualization<br>Designer &amp; Developer",
+        "cvAbout": "Data visualization designer, developer and researcher with 6+ years building interactive tools for scientists working with complex datasets. Grounded in HCI and data visualization, I work across the full stack, from Python backend services to TypeScript + Vue/React frontends, combining a deep understanding of domain expert needs with hands-on development from user research to deployment. I enjoy building things from scratch in interdisciplinary teams, and am passionate about applying these skills in biotech and greentech, where data-driven discovery can have real-world impact.",
+        "cvPubFlag": "cvCusp",
+        "softSkillsOverride": [
+          {
+            "skill": "product thinking",
+            "note": "translating research needs into technical roadmaps"
+          },
+          {
+            "skill": "user research",
+            "note": "interviews, probes & requirements workshops"
+          },
+          {
+            "skill": "greenfield building",
+            "note": "architecting systems end-to-end from scratch"
+          },
+          {
+            "skill": "stakeholder partnership",
+            "note": "bridging research teams and engineering"
+          },
+          {
+            "skill": "mentoring",
+            "note": "BSc, MSc students and interns"
+          },
+          {
+            "skill": "giving feedback",
+            "note": "code review & design critique"
+          },
+          {
+            "skill": "visual communication",
+            "note": "data dashboards & presentation design"
+          },
+          {
+            "skill": "scientific curiosity",
+            "note": "excited by enabling domain discovery"
+          }
+        ],
+        "skillsOverride": [
+          {
+            "category": "Front-End",
+            "value": "TypeScript, JavaScript, HTML/CSS, Vue, React, D3.js, Vega-Lite, Pixi.js"
+          },
+          {
+            "category": "Data & Back-End",
+            "value": "Python, R, Flask, FastAPI, Node.js, SQL, HuggingFace, PyTorch, AutoGen, Slurm, Git, Docker"
+          },
+          {
+            "category": "Design & UX",
+            "value": "Figma, Illustrator, InDesign"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "0": [
+            "Building LLM-powered tools that enable non-technical researchers to author interactive genomics visualizations — end-to-end development from Python agent backend to TypeScript/Vue frontend.",
+            "Developing full-stack data applications for large-scale biomedical datasets, partnering daily with computational biologists, data engineers, and UX designers."
+          ],
+          "1": [
+            "Architected PanVA and Multipla from scratch — full-stack visualization applications (Python + Vue/TypeScript) in active daily use by biotechnology companies and plant-breeding labs in the Netherlands and Belgium.",
+            "Conducted user research with 30+ domain experts to drive iterative product design; led a cross-disciplinary team of bioinformaticians, software developers, and visualization researchers."
+          ],
+          "2": [
+            "Prototyped Blace, a novel visualization authoring framework; led requirements gathering with biomedical researchers across Harvard and partner institutions."
+          ],
+          "3": [
+            "Built and deployed GLANCE, a visual analytics tool for tracking glaucoma progression — developed end-to-end with clinical vision scientists for in-clinic use."
+          ],
+          "4": [
+            "Delivered end-to-end data science and visualization solutions for SMEs across five sectors — scoped, built, and presented each project independently as the sole technical contributor."
+          ]
+        }
+      },
+      "polarsteps": {
+        "cvOutputDir": "applications/polarsteps",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvMarkWords": [
+          "visual design"
+        ],
+        "cvRoleLine1": "Designer",
+        "cvRoleLine2": "Data Visualization Researcher",
+        "cvCalloutRole": "Designer<br>Data Visualization Researcher",
+        "cvAbout": "Data visualization designer and researcher with 6+ years of experience building interactive tools for complex large-scale datasets, primarily in life sciences and genomics. I combine visual design and HCI research methods with hands-on development, engaging in the whole process of designing, building, and evaluating systems.",
+        "cvPubFlag": "cvPolarsteps",
+        "softSkillsOverride": [
+          {
+            "skill": "full design lifecycle",
+            "note": "concept, prototype, deploy, iterate"
+          },
+          {
+            "skill": "user research",
+            "note": "interviews, usability tests & probes"
+          },
+          {
+            "skill": "prototyping",
+            "note": "sketches to high-fidelity interactive"
+          },
+          {
+            "skill": "design thinking",
+            "note": "translating user needs into design decisions"
+          },
+          {
+            "skill": "multi-disciplinary work",
+            "note": "engineers, researchers & domain scientists"
+          },
+          {
+            "skill": "giving feedback",
+            "note": "design critique & code review"
+          },
+          {
+            "skill": "attention to detail",
+            "note": "focus on details that matter"
+          }
+        ],
+        "skillsOverride": [
+          {
+            "category": "Design",
+            "value": "Figma, Illustrator, InDesign, Premiere Pro"
+          },
+          {
+            "category": "Front-End",
+            "value": "JavaScript, TypeScript, HTML/CSS, Vue, React, D3.js, Vega-Lite, Pixi.js"
+          },
+          {
+            "category": "Data & Back-End",
+            "value": "Python, R, SQL, Flask, FastAPI, HuggingFace, PyTorch, AutoGen, Slurm, Git, Docker"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "0": [
+            "Leading design and development of LLM-assisted authoring tools for interactive visualizations, working with UX designers, engineers, and domain scientists.",
+            "Defining interaction patterns for complex genomics interfaces; prototyping and iterating based on user feedback."
+          ],
+          "1": [
+            "Led end-to-end design and development of PanVA and Multipla, in use at biotech companies and plant-breeding labs across the Netherlands and Belgium.",
+            "Conducted user research with 30+ domain experts."
+          ],
+          "2": [
+            "Led user research on visualization authoring requirements; co-designed Blace, a novel blended authoring interaction framework."
+          ],
+          "3": [
+            "Designed and built GLANCE with clinical vision scientists, a visual analytics tool for in-clinic glaucoma monitoring."
+          ],
+          "4": [
+            "Designed and delivered data visualization solutions for SMEs across five sectors."
+          ]
+        }
+      },
+      "strava": {
+        "cvOutputDir": "applications/strava",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvMarkWords": [
+          "Data visualization",
+          "HCI"
+        ],
+        "cvRoleLine1": "HCI & Data Visualization",
+        "cvRoleLine2": "Researcher",
+        "cvCalloutRole": "HCI &amp; Data Visualization<br>Researcher",
+        "cvAbout": "Data visualization and HCI researcher with 6+ years of experience building and evaluating interactive tools for complex data. I combine qualitative research methods with hands-on design and development, engaging in the full process of understanding user needs, designing, building, and evaluating systems.",
+        "cvPubFlag": "cvStrava",
+        "softSkillsOverride": [
+          {
+            "skill": "user research",
+            "note": "interviews, probes & workshop facilitation"
+          },
+          {
+            "skill": "scientific writing",
+            "note": "first-author papers in top venues"
+          },
+          {
+            "skill": "public speaking",
+            "note": "conference talks & invited presentations"
+          },
+          {
+            "skill": "mentoring",
+            "note": "BSc, MSc students and interns"
+          },
+          {
+            "skill": "international research",
+            "note": "studies with partners across US, Sweden, Netherlands and Belgium"
+          },
+          {
+            "skill": "visual communication",
+            "note": "posters, slides & presentation design"
+          },
+          {
+            "skill": "creativity",
+            "note": "design novel visual encodings"
+          },
+          {
+            "skill": "resilience",
+            "note": "meeting conference deadlines"
+          }
+        ],
+        "skillsOverride": [
+          {
+            "category": "Front-End",
+            "value": "JavaScript, TypeScript, HTML/CSS, Vue, React, D3.js, Vega-Lite, Pixi.js"
+          },
+          {
+            "category": "Data & Back-End",
+            "value": "Python, SQL, Flask, HuggingFace, (PyTorch), AutoGen, Slurm, Git, Docker"
+          },
+          {
+            "category": "Design & Research",
+            "value": "Figma, Miro, Illustrator, InDesign, Qualtrics, Atlas.ti"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "0": [
+            "Leading projects on LLM-assisted authoring of interactive visualizations to reduce the technical barrier for domain experts, informing deployment in clinical and research software.",
+            "Building visualization tools for genomics and biomedical data, collaborating with domain scientists and software engineers."
+          ],
+          "1": [
+            "Designed, built, and deployed interactive visualization systems enabling genomics researchers to explore pangenomes and genomic variants, generating leads for novel variants linked to traits of interest, used by biotech companies and academic labs.",
+            "Continued user studies with 30+ domain experts on visualization authoring, mapping authoring personas and key tasks."
+          ],
+          "2": [
+            "Initiated user research on visualization authoring requirements; co-designed Blace, a novel framework for blending authoring techniques."
+          ],
+          "3": [
+            "Built a visual analytics tool for monitoring glaucoma progression with clinical vision scientists, spurring further usability research."
+          ]
+        }
+      },
+      "google": {
+        "email": "astridvandenbrandt@gmail.com",
+        "cvOutputDir": "applications/google",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvMarkWords": [
+          "Data visualization",
+          "intuitive interfaces"
+        ],
+        "cvRoleLine1": "Data Visualization",
+        "cvRoleLine2": "Engineer & Researcher",
+        "cvCalloutRole": "Data Visualization<br>Engineer &amp; Researcher",
+        "cvContactExtra": "Amsterdam, Netherlands",
+        "cvAbout": "Data visualization engineer and researcher with 6+ years building interactive tools for complex biomedical and genomics data in research settings. I combine visual design, HCI research and data science methods, and enjoy working at all stages from concept to implementation and evaluation. My goal is to build intuitive interfaces that make data easily explorable and interpretable, currently through LLM agents and natural language integration.",
+        "cvPubFlag": "cvGoogle",
+        "softSkillsOverride": [
+          {
+            "skill": "design thinking",
+            "note": "user needs to system design"
+          },
+          {
+            "skill": "stakeholder management",
+            "note": "in industry & academia"
+          },
+          {
+            "skill": "user research",
+            "note": "interviews & probes"
+          },
+          {
+            "skill": "mentoring & feedback",
+            "note": "students & code review"
+          },
+          {
+            "skill": "communication",
+            "note": "talks & presentation design"
+          },
+          {
+            "skill": "project delivery",
+            "note": "planning & on-time delivery"
+          },
+          {
+            "skill": "creativity",
+            "note": "novel visual encodings"
+          },
+          {
+            "skill": "scientific writing",
+            "note": "first-author papers"
+          }
+        ],
+        "skillsOverride": [
+          {
+            "category": "Front-End",
+            "value": "JavaScript, TypeScript, HTML/CSS, Vue, React, D3.js, Vega-Lite, Pixi.js"
+          },
+          {
+            "category": "Data & Back-End",
+            "value": "Python, R, SQL, Flask, FastAPI, REST APIs, HuggingFace, PyTorch, AutoGen, LLM APIs, Docker, AWS, Linux/CLI, Slurm, Git"
+          },
+          {
+            "category": "Design",
+            "value": "Figma, Illustrator, InDesign"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "1": [
+            "Designed, built, and deployed interactive visualization systems (PanVA, Multipla) enabling genomics researchers to explore pangenomes and sequence variants, used by biotech companies and plant-breeding labs in the Netherlands and Belgium.",
+            "Ran requirement sessions and live demos with those partners; led user studies on visualization authoring, published in IEEE TVCG and EuroVis."
+          ],
+          "4": [
+            "Delivered data-science and visualization projects for small businesses across construction, HR, and food waste, scoping requirements with non-technical owners, building the solution, and presenting results to stakeholders."
+          ]
+        }
+      },
+      "palantir": {
+        "email": "astridvandenbrandt@gmail.com",
+        "cvOutputDir": "applications/palantir",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvMarkWords": [
+          "Data visualization",
+          "tools they actually use"
+        ],
+        "cvRoleLine1": "Data Visualization",
+        "cvRoleLine2": "Researcher & Designer",
+        "cvCalloutRole": "Data Visualization<br>Researcher &amp; Designer",
+        "cvContactExtra": "Amsterdam, Netherlands",
+        "cvAbout": "Data visualization researcher and designer with 6+ years working alongside domain experts to turn unfamiliar, messy data into tools they actually use. I combine user research, visual design, and data science methods, and enjoy working at all stages from framing the problem to building and evaluating the solution, in whichever domain the problem happens to sit.",
+        "cvPubFlag": "cvPalantir",
+        "softSkillsOverride": [
+          {
+            "skill": "problem framing",
+            "note": "structuring open-ended questions"
+          },
+          {
+            "skill": "user research",
+            "note": "interviews, probes & field studies"
+          },
+          {
+            "skill": "stakeholder management",
+            "note": "in industry & academia"
+          },
+          {
+            "skill": "domain adaptability",
+            "note": "genomics, ophthalmology, construction, HR"
+          },
+          {
+            "skill": "communication",
+            "note": "talks, training & presentation design"
+          },
+          {
+            "skill": "project delivery",
+            "note": "planning & on-time delivery"
+          },
+          {
+            "skill": "design thinking",
+            "note": "user needs to system design"
+          },
+          {
+            "skill": "mentoring & feedback",
+            "note": "students & code review"
+          }
+        ],
+        "skillsOverride": [
+          {
+            "category": "Data & Code",
+            "value": "Python, R, SQL, Flask, FastAPI, REST APIs, PyTorch, HuggingFace, LLM APIs, AutoGen, Docker, Linux/CLI, AWS, Git"
+          },
+          {
+            "category": "Research",
+            "value": "Interviews, design probes, user studies, Qualtrics, Atlas.ti, Miro"
+          },
+          {
+            "category": "Front-End & Design",
+            "value": "TypeScript, JavaScript, Vue, React, D3.js, Vega-Lite, Figma, Illustrator"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "1": [
+            "Designed, built, and deployed interactive analytics systems (PanVA, Multipla) with genomics researchers, now used by biotech companies and plant breeding labs in the Netherlands and Belgium.",
+            "Embedded with those partners to scope requirements, ran live demos and training sessions, and led a two-phase interview study with 20+ domain experts, distilling five user personas."
+          ],
+          "3": [
+            "Built and deployed GLANCE, a tool for tracking glaucoma progression, working onsite with clinical vision scientists to understand their workflow."
+          ],
+          "4": [
+            "Delivered data science and visualization projects to small businesses across construction, HR, and food waste, scoping requirements with non-technical owners, building the solution, and presenting the results."
+          ]
+        }
+      },
+      "cradle": {
+        "email": "astridvandenbrandt@gmail.com",
+        "cvOutputDir": "applications/cradle",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvContactExtra": "Amsterdam, Netherlands",
+        "cvRoleLine1": "Data Visualization",
+        "cvRoleLine2": "Designer & Researcher",
+        "cvCalloutRole": "Data Visualization Designer<br>&amp; Researcher",
+        "cvAbout": "Data visualization designer and researcher with 6+ years building interactive tools for complex, data-dense biomedical and genomics data. I combine visual design, HCI research and hands-on development, working from concept to implementation and evaluation. My goal is to build intuitive interfaces that make data easily explorable and interpretable, currently through LLM agents and natural language integration.",
+        "cvPubFlag": "cvCradle",
+        "softSkillsOverride": [
+          {
+            "skill": "design thinking",
+            "note": "user needs to system design"
+          },
+          {
+            "skill": "creativity",
+            "note": "novel visual encodings"
+          },
+          {
+            "skill": "systems thinking",
+            "note": "design & use patterns"
+          },
+          {
+            "skill": "user research",
+            "note": "interviews & probes"
+          },
+          {
+            "skill": "mentoring & feedback",
+            "note": "students & code review"
+          },
+          {
+            "skill": "diverse communication",
+            "note": "posters, papers & talks"
+          },
+          {
+            "skill": "project delivery",
+            "note": "planning & on-time delivery"
+          },
+          {
+            "skill": "stakeholder management",
+            "note": "in industry & academia"
+          }
+        ],
+        "skillsOverride": [
+          {
+            "category": "Front-End",
+            "value": "JavaScript, TypeScript, HTML/CSS, Vue, React, D3.js, Vega-Lite, Pixi.js"
+          },
+          {
+            "category": "Data & Back-End",
+            "value": "Python, R, SQL, Flask, FastAPI, REST APIs, HuggingFace, PyTorch, AutoGen, LLM APIs, Docker, AWS, Linux/CLI, Slurm, Git"
+          },
+          {
+            "category": "Design",
+            "value": "Figma, Illustrator, InDesign"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "1": [
+            "Designed, built, and deployed interactive visualization systems (PanVA, Multipla), used by biotech companies and plant breeding labs in the Netherlands and Belgium.",
+            "Led a two-phase interview study with 20+ domain experts on how they build visualizations, distilling five user personas that shaped feature design."
+          ],
+          "3": [
+            "Built and deployed a visual analytics tool for monitoring glaucoma progression, working directly with vision scientists to fit it into their clinical workflow."
+          ],
+          "4": [
+            "Delivered data-science and visualization projects for small businesses across construction, HR, and food-waste management."
+          ]
+        }
+      },
+      "roche": {
+        "email": "astridvandenbrandt@gmail.com",
+        "cvOutputDir": "applications/roche",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvContactExtra": "Amsterdam, Netherlands",
+        "cvAbout": "Data visualization researcher and designer with 6+ years working with clinicians and domain experts in ophthalmology and biomedical research, translating clinical and scientific needs into practical tools. I build trusted relationships with domain experts, in both Dutch and English.",
+        "softSkillsOverride": [
+          {
+            "skill": "stakeholder trust",
+            "note": "with clinicians & domain experts"
+          },
+          {
+            "skill": "user research",
+            "note": "interviews & workshop facilitation"
+          },
+          {
+            "skill": "collaboration",
+            "note": "research, industry & clinical partners"
+          },
+          {
+            "skill": "translation",
+            "note": "scientific needs into solutions"
+          },
+          {
+            "skill": "bilingual fluency",
+            "note": "native Dutch, fluent English"
+          },
+          {
+            "skill": "self-starter",
+            "note": "ambiguous, cross-org problems"
+          },
+          {
+            "skill": "communication",
+            "note": "talks, training & presentation design"
+          },
+          {
+            "skill": "resilience",
+            "note": "long-term projects & deadlines"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "0": [
+            "Collaborating with scientists, clinicians, and engineers on biomedical data tools, translating clinical needs into technical direction.",
+            "Building relationships with domain experts across institutions to understand real-world workflows."
+          ],
+          "1": [
+            "Designed, built, and deployed interactive visualization systems (PanVA, Multipla), working directly with biotech companies and plant breeding labs in the Netherlands and Belgium.",
+            "Led a two-phase interview study with 20+ domain experts, distilling five user personas that shaped the tools."
+          ],
+          "3": [
+            "Worked onsite at the Shiley Eye Institute with ophthalmologists and vision scientists to build a visual analytics tool for glaucoma monitoring that fit their clinical workflow."
+          ],
+          "4": [
+            "Delivered data science and visualization projects to small businesses across construction, HR, and food waste, scoping requirements with non-technical owners, building the solution, and presenting the results."
+          ]
+        }
+      },
+      "databricks": {
+        "email": "astridvandenbrandt@gmail.com",
+        "cvOutputDir": "applications/databricks",
+        "cvOutputName": "CV_Astrid_van_den_Brandt",
+        "cvTightLayout": true,
+        "cvContactExtra": "Amsterdam, Netherlands",
+        "cvAbout": "Data scientist and researcher with 6+ years building and deploying interactive, AI-powered tools for complex data, most recently agentic and LLM-based systems for genomics. I combine hands-on engineering with the ability to translate technical work for both expert and non-technical audiences.",
+        "cvPubFlag": "cvDatabricks",
+        "softSkillsOverride": [
+          {
+            "skill": "production deployment",
+            "note": "AWS & institutional infra"
+          },
+          {
+            "skill": "technical communication",
+            "note": "expert & non-expert audiences"
+          },
+          {
+            "skill": "customer collaboration",
+            "note": "embedded with industry partners"
+          },
+          {
+            "skill": "self-starter",
+            "note": "fuzzy problems to working systems"
+          },
+          {
+            "skill": "user research",
+            "note": "interviews & workshop facilitation"
+          },
+          {
+            "skill": "mentoring",
+            "note": "BSc, MSc students and interns"
+          },
+          {
+            "skill": "giving feedback",
+            "note": "code review & design critique"
+          },
+          {
+            "skill": "resilience",
+            "note": "long-term projects & deadlines"
+          }
+        ],
+        "skillsOverride": [
+          {
+            "category": "AI & ML",
+            "value": "PyTorch, HuggingFace, LangChain, AutoGen, LLM APIs, scikit-learn, pandas"
+          },
+          {
+            "category": "Data & Back-End",
+            "value": "Python, R, SQL, Flask, FastAPI, Git, Docker, AWS, Linux/CLI, Slurm"
+          },
+          {
+            "category": "Front-End",
+            "value": "TypeScript, JavaScript, Vue, React, D3.js, Vega-Lite"
+          }
+        ],
+        "experienceBulletsOverride": {
+          "0": [
+            "Building agentic, LLM-powered systems for authoring interactive genomics visualizations, with Python agent backends (AutoGen, LLM APIs) that keep output stable and expressive.",
+            "Collaborating with scientists, software engineers, and UX/UI designers to move this work from prototype toward a tool domain experts can use."
+          ],
+          "1": [
+            "Designed, built, and deployed interactive analytics systems (PanVA, Multipla) on institutional infrastructure and AWS, used by biotech companies and plant breeding labs in the Netherlands and Belgium.",
+            "Ran technical demos and requirement sessions with industry partners, and led a two-phase interview study with 20+ domain experts."
+          ],
+          "4": [
+            "Delivered data science and visualization projects to small businesses across construction, HR, and food waste, scoping requirements with non-technical owners, building the solution, and presenting the results."
+          ]
+        }
+      }
+    },
     "year": "2026",
     "cvPdf": "CV_Astrid_van_den_Brandt.pdf",
     "scholarUrl": "https://scholar.google.com/citations?user=_SENdBwAAAAJ&hl=en&oi=ao"
@@ -274,11 +872,11 @@
     "items": [
       {
         "category": "Front-End",
-        "value": "JavaScript, TypeScript, HTML/CSS, Vue, (React), D3.js, Vega-Lite, Pixi.js"
+        "value": "JavaScript, TypeScript, HTML/CSS, Vue, React, D3.js, Vega-Lite, Pixi.js"
       },
       {
         "category": "Data & Back-End",
-        "value": "Python, SQL, Flask, HuggingFace, (PyTorch), AutoGen, Slurm, Git, Docker"
+        "value": "Python, R, SQL, Flask, FastAPI, HuggingFace, PyTorch, AutoGen, Slurm, Git, Docker"
       },
       {
         "category": "Design",
@@ -333,7 +931,12 @@
         "venue": "arXiv preprint, 2026",
         "doi": "10.48550/arXiv.2606.00370",
         "badge": null,
-        "cv": true
+        "cv": true,
+        "cvStrava": true,
+        "cvCusp": true,
+        "cvGoogle": true,
+        "cvCradle": true,
+        "cvDatabricks": true
       },
       {
         "year": "2026",
@@ -351,7 +954,8 @@
         "boldAuthor": "A. van den Brandt",
         "venue": "arXiv preprint, 2026",
         "doi": "10.48550/arXiv.2509.19182",
-        "badge": null
+        "badge": null,
+        "cvGoogle": true
       },
       {
         "year": "2025",
@@ -360,7 +964,8 @@
         "boldAuthor": "A. van den Brandt",
         "venue": "arXiv preprint, 2025",
         "doi": "10.48550/arXiv.2510.24888",
-        "badge": null
+        "badge": null,
+        "cvPolarsteps": true
       },
       {
         "year": "2025",
@@ -388,7 +993,12 @@
         "venue": "IEEE Transactions on Visualization and Computer Graphics (TVCG), 2025",
         "doi": "10.1109/TVCG.2024.3456298",
         "badge": null,
-        "cv": true
+        "cv": true,
+        "cvStrava": true,
+        "cvPolarsteps": true,
+        "cvPalantir": true,
+        "cvCradle": true,
+        "cvDatabricks": true
       },
       {
         "year": "2025",
@@ -416,7 +1026,13 @@
         "venue": "IEEE Transactions on Visualization and Computer Graphics (TVCG), 2024",
         "doi": "10.1109/TVCG.2023.3282364",
         "badge": null,
-        "cv": true
+        "cv": true,
+        "cvCusp": true,
+        "cvPolarsteps": true,
+        "cvGoogle": true,
+        "cvPalantir": true,
+        "cvCradle": true,
+        "cvDatabricks": true
       },
       {
         "year": "2020",
@@ -425,7 +1041,10 @@
         "boldAuthor": "A. van den Brandt",
         "venue": "Eurographics Workshop on Visual Computing for Biology & Medicine (VCBM), 2020",
         "doi": "10.2312/VCBM.20201175",
-        "badge": "Best Paper Award"
+        "badge": "Best Paper Award",
+        "cvStrava": true,
+        "cvCusp": true,
+        "cvPalantir": true
       },
       {
         "year": "2025",
@@ -436,6 +1055,19 @@
         "doi": "10.1101/2025.06.23.661080",
         "badge": null,
         "hidden": true
+      }
+    ]
+  },
+  "patents": {
+    "tag": "#p",
+    "items": [
+      {
+        "year": "2024",
+        "number": "63/673,489",
+        "office": "USPTO",
+        "type": "U.S. Provisional Application",
+        "status": "Pending",
+        "title": "Multiple Linked Visualization Authoring Interfaces"
       }
     ]
   },
@@ -516,7 +1148,7 @@
       },
       {
         "year": "2026",
-        "title": "Invited participant, Dagstuhl Seminar 26101",
+        "title": "Invited Participant, Dagstuhl Seminar",
         "venue": "Faithful Visualisations for Biology",
         "country": "Germany",
         "url": "https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/26101",
@@ -549,6 +1181,12 @@
         "venue": "VCBM 2020",
         "country": "Germany",
         "virtual": true
+      },
+      {
+        "year": "2018",
+        "title": "3rd Place, Hackatrain",
+        "venue": "Deutsche Bahn / NS / Translink",
+        "country": "Netherlands"
       }
     ]
   },
